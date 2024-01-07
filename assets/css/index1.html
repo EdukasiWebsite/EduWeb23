@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Your Landing Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding: 60px 15px; /* Adjust according to your design */
+        }
+
+        .jumbotron {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4" id="THIS">Your Landing Page</h1>
+        <p class="lead">This is a simple landing page created with Bootstrap.</p>
+        <hr class="my-4">
+        <form onsubmit="return changeTitle()">
+            <div class="form-group">
+                <label for="newTitle">Enter New Title:</label>
+                <input type="text" class="form-control" id="newTitle" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Change Title</button>
+        </form>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- Custom JavaScript to change the title dynamically -->
+<script>
+    function changeTitle() {
+        var newTitle = document.getElementById('newTitle').value;
+        if (newTitle.trim() !== "") {
+            document.getElementById('THIS').innerText = newTitle;
+            return false; // prevent form submission
+        } else {
+            alert("Please enter a valid title.");
+            return false; // prevent form submission
+        }
+    }
+</script>
+
+</body>
+</html>
